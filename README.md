@@ -9,9 +9,9 @@ Diego Ramos dos Santos	RM 570889
 
 José Rodrigues da Silva Júnior  RM 572300
 
-Integrante 4	RM XXXXX
+Pedro Ribeiro Gesini  RM 469421
 
-Integrante 5  RM XXXXX
+Heitor Assis Duenhas  RM 570472
 
 ## Resumo do Problema e Cenário Analisado
 
