@@ -46,6 +46,9 @@ while True:
         case 4:
             logeventos(banc)
             input("\nPressione ENTER para voltar ao menu...")
+        case 5:
+            print("Encerrando o Sistema Operacional Aurora. Até logo!")
+            break
         case _:
             print("Opção inválida.")
             input("\nPressione ENTER para voltar ao menu...")
