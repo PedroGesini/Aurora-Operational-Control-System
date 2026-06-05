@@ -7,7 +7,7 @@ def mostrar_modulos(banc):
     tabela_modulos = []
 
     for nome, status in modulos.items():
-        if status == 0:
+        if not status == 1:
             situacao = "DESLIGADO"
         else:
             situacao = "LIGADO"
