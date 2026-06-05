@@ -60,6 +60,20 @@ Motivo:
 - Facilitam cálculos estatísticos.
 - Servem como base para a previsão de energia.
 
+### Fila (Queue) e Pilha (Stack)
+
+Utilizadas para gerenciamento e priorização de alertas e eventos.
+
+Fila (.pop(0)): Aplica o conceito FIFO (First-In, First-Out) para garantir que os alertas mais antigos sejam analisados primeiro.
+
+Pilha (.pop()): Aplica o conceito LIFO (Last-In, First-Out) para exibir o evento mais recente registrado na telemetria.
+
+Motivo: 
+
+- Fila (Queue): Garante que os alertas do sistema sejam processados na ordem cronológica exata em que ocorreram, impedindo que um problema antigo e não resolvido seja esquecido.
+- Pilha (Stack): Permite o acesso imediato ao evento mais recente registrado pelos sensores, facilitando a análise rápida do contexto atual e imediato da missão.
+
+
 ### Arquivo JSON
 
 Utilizado como banco de dados da aplicação.
@@ -73,24 +87,33 @@ Motivo:
 ## Regras Lógicas Principais do Diagnóstico
 ### 1. Verificação de Consumo Energético
 
-Para cada registro:
+O sistema analisa o balanço de energia cruzando o consumo com a carga da bateria:
 
-- if consumo > geracao:
-    - status = "CRITICO"
-- else:
-    - status = "ESTAVEL"
+if consumo > geracao and bateria < 40: → Status "CRÍTICO MAX"
+
+elif consumo > geracao or bateria <= 60: → Status "CRÍTICO"
+
+else: → Status "ESTÁVEL"
+
+Expressão Booleana Principal do Diagnóstico:
+ALERTA_CRITICO_MAX = (Consumo > Geracao) AND (Bateria < 40)
 
 Interpretação:
 
-CRÍTICO → Consumo maior que a geração.
+CRÍTICO MAX → Défice de energia aliado a um nível de bateria perigosamente baixo (< 40%). Risco iminente de apagão.
 
-ESTÁVEL → Geração suficiente para atender o consumo.
+CRÍTICO → Consumo maior que a geração ou baterias começando a atingir níveis de atenção (<= 60%).
+
+ESTÁVEL → Geração suficiente para atender o consumo e baterias operando em níveis seguros.
 
 ### 2. Diagnóstico de Módulos
-- if status == 0:
-    - situacao = "DESLIGADO"
-- else:
-    - situacao = "LIGADO"
+O sistema verifica as falhas operacionais invertendo a lógica de validação:
+
+if not status == 1: 
+     → Situação "DESLIGADO"
+
+else: 
+     → Situação "LIGADO"
 
 Interpretação:
 
@@ -157,7 +180,7 @@ No cenário analisado, a previsão indica risco de baixa geração energética.
   - pip install tabulate
   
 - Executar o Sistema
-  - python src/sistema.py
+  - python sistema.py
 
 ## Exemplo de Entrada e Saída
 ### Entrada
@@ -181,7 +204,7 @@ Escolha da opção:
 | 3 | 35 | 58 | 74 | CRÍTICO |
 | 4 | 30 | 65 | 60 | CRÍTICO |
 | 5 | 28 | 70 | 48 | CRÍTICO |
-| 6 | 22 | 78 | 32 | CRÍTICO |
+| 6 | 22 | 78 | 32 | CRÍTICO MAX |
 
 Recomendações Geradas pelo Sistema
 
