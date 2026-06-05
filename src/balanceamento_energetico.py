@@ -10,7 +10,6 @@ def verificar_consumo(banc):
     tabela = []
 
     for i in range(len(geracao)):
-        # Uso de operadores compostos AND e OR (Requisito 8.3)
         if consumo[i] > geracao[i] and bateria[i] < 40:
             status = "CRÍTICO MAX"
         elif consumo[i] > geracao[i] or bateria[i] <= 60:
