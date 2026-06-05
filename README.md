@@ -88,7 +88,6 @@ Motivo:
 ### 1. Verificação de Consumo Energético
 
 O sistema analisa o balanço de energia cruzando o consumo com a carga da bateria:
-
 ```python
 if consumo > geracao and bateria < 40: → Status "CRÍTICO MAX"
 
