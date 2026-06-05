@@ -17,7 +17,7 @@ insertname = login()
 
 while True:     
 
-    print(f"-----SEJA BEM VINDO {insertname}-----")
+    print(f"-----SEJA BEM-VINDO, {insertname}-----")
 
     print(f"""
     SISTEMA OPERACIONAL AURORA
