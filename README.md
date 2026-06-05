@@ -89,14 +89,18 @@ Motivo:
 
 O sistema analisa o balanço de energia cruzando o consumo com a carga da bateria:
 
+```python
 if consumo > geracao and bateria < 40: → Status "CRÍTICO MAX"
 
 elif consumo > geracao or bateria <= 60: → Status "CRÍTICO"
 
 else: → Status "ESTÁVEL"
+```
 
 Expressão Booleana Principal do Diagnóstico:
+```python
 ALERTA_CRITICO_MAX = (Consumo > Geracao) AND (Bateria < 40)
+```
 
 Interpretação:
 
@@ -108,12 +112,13 @@ ESTÁVEL → Geração suficiente para atender o consumo e baterias operando em 
 
 ### 2. Diagnóstico de Módulos
 O sistema verifica as falhas operacionais invertendo a lógica de validação:
-
+```python
 if not status == 1: 
      → Situação "DESLIGADO"
 
 else: 
      → Situação "LIGADO"
+```
 
 Interpretação:
 
@@ -177,10 +182,14 @@ No cenário analisado, a previsão indica risco de baixa geração energética.
 
 ### Como Executar
 - Instalar Dependências
+  ```python
   - pip install tabulate
+  ```
   
 - Executar o Sistema
+  ```python
   - python sistema.py
+  ```
 
 ## Exemplo de Entrada e Saída
 ### Entrada
