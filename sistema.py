@@ -30,7 +30,11 @@ while True:
     """)
 
     # PROGRAMA PRINCIPAL
-    opcao = int(input("DIGITE A OPÇÃO DESEJADA: "))
+    try:
+        opcao = int(input("DIGITE A OPÇÃO DESEJADA: "))
+    except ValueError:
+        print("Entrada inválida! Por favor, digite um número.")
+        continue
 
     match opcao:
 
