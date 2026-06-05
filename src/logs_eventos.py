@@ -49,4 +49,12 @@ def logeventos(banc):
                 headers=["EVENTOS"],
                 tablefmt="fancy_grid"
             ))
+            print("\n--- ANÁLISE ESTRUTURAL (FILA E PILHA) ---")
+    
+            evento_antigo = eventos.pop(0)
+            print(f"Tratando o evento mais antigo da Fila: {evento_antigo[0]}")
+    
+            evento_recente = eventos.pop()
+            print(f"Analisando o evento mais recente da Pilha: {evento_recente[0]}\n")
+  
             return logeventos
