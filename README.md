@@ -35,12 +35,13 @@ O objetivo é fornecer diagnósticos rápidos que dão suporte na tomada de deci
 ### Dicionários
 
 Foram utilizados para armazenar informações organizadas em categorias:
-
+```python
 banc["energia"]
 
 banc["ambiente"]
 
 banc["modulos"]
+```
 
 Motivo:
 
@@ -51,9 +52,9 @@ Motivo:
 ### Listas
 
 Utilizadas para armazenar históricos de dados:
-
+```python
 "geracao_solar": [40, 38, 35, 30, 28, 22]
-
+```
 Motivo:
 
 - Permitem análise temporal.
