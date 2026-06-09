@@ -6,7 +6,8 @@ Abaixo, nós detalhamos as duas frentes em que a IA foi acionada e as respectiva
 
 ### 1. Estruturação do Banco de Dados (Formato JSON)
 
-**Como a IA foi utilizada** Inicialmente, a equipe possuía dúvidas sobre qual seria o formato de arquivo mais leve, eficiente e integrado com Python para atuar como o banco de dados simulado da telemetria. A IA recomendou o uso do formato JSON. Como não tínhamos familiaridade prévia com a sua estrutura, solicitamos à IA que explicasse as regras de formatação (uso de chaves, listas internas, pares de chave-valor) e como a biblioteca nativa `json` do Python faria a leitura desses dados.
+**Como a IA foi utilizada**
+Inicialmente, a equipe possuía dúvidas sobre qual seria o formato de arquivo mais leve, eficiente e integrado com Python para atuar como o banco de dados simulado da telemetria. A IA recomendou o uso do formato JSON. Como não tínhamos familiaridade prévia com a sua estrutura, solicitamos à IA que explicasse as regras de formatação (uso de chaves, listas internas, pares de chave-valor) e como a biblioteca nativa `json` do Python faria a leitura desses dados.
 
 **Validação Crítica**
 Não copiamos um banco de dados pronto da IA. Após compreendermos as regras estruturais, a equipe elaborou o próprio conjunto de dados (o arquivo `data.json`), inserindo manualmente os cenários, os valores das 6 leituras de energia, os status dos módulos operacionais e a anomalia exigida pelo projeto. Em seguida, testamos o carregamento no Python (`json.load`) para garantir que os dados estavam acessíveis nos formatos de listas e dicionários.
