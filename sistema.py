@@ -42,8 +42,8 @@ while True:
             verificar_consumo(banc)
             input("\nPressione ENTER para voltar ao menu...")
         case 2:
-           prever_energia(banc)
-           input("\nPressione ENTER para voltar ao menu...")
+            prever_energia(banc)
+            input("\nPressione ENTER para voltar ao menu...")
         case 3:
             mostrar_modulos(banc)
             input("\nPressione ENTER para voltar ao menu...")
